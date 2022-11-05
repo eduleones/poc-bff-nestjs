@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateOrderDto } from './dto/create-order.dto';
-import { UpdateOrderDto } from './dto/update-order.dto';
+import { OrderDto } from './dto/order.dto';
+import { makeOrders } from './orders.factories';
 
 @Injectable()
 export class OrdersService {
-  findAll() {
-    return `This action returns all orders`;
+  findAll(): OrderDto[] {
+    return makeOrders(30);
   }
 }
